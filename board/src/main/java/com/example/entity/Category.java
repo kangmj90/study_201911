@@ -1,19 +1,14 @@
 package com.example.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
  * @author kangminjeong
- * @since 2019. 11. 12.
+ * @since 2019. 12. 1.
  */
 @Entity
-@Data
-@AllArgsConstructor
-public class User {
+public class Category {
     @Id
     private Long id;
     private String name;
