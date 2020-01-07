@@ -4,6 +4,7 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
       maximum-pool-size: 10
       idle-timeout: 1000
@@ -13,6 +14,8 @@ spring:
     open-in-view: true
     hibernate:
       ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
 
   flyway:

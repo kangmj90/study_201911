@@ -21,10 +21,19 @@ public class Board {
     private Long id;
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "category_id")
+//    private Category category;
+//
+//    @Enumerated(EnumType.STRING)
+//    private BoardType type;
 
-    @Enumerated(EnumType.STRING)
-    private BoardType type;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Board(final String name, final User user) {
+        this.name = name;
+        this.user = user;
+    }
 }

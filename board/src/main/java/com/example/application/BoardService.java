@@ -1,5 +1,6 @@
 package com.example.application;
 
+import com.example.application.dto.BoardDto;
 import com.example.entity.Board;
 
 import java.util.List;
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface BoardService {
     List<Board> list();
+
+    Board register(BoardDto dto);
 }

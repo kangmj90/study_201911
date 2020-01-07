@@ -15,9 +15,9 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         List<Board> boards = new ArrayList<>();
-        boards.add(new Board(1L, "board1"));
-        boards.add(new Board(2L, "board2"));
-        boards.add(new Board(3L, "board3"));
+//        boards.add(new Board(1L, "board1"));
+//        boards.add(new Board(2L, "board2"));
+//        boards.add(new Board(3L, "board3"));
 
         System.out.println("boards = " + boards);
 
