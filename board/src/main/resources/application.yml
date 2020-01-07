@@ -13,10 +13,16 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     open-in-view: true
     hibernate:
-      ddl-auto: none
+      #      ddl-auto: none
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
 
   flyway:
     baseline-description: 1
+
+logging:
+  level:
+    com.emcast.board..: DEBUG
+
