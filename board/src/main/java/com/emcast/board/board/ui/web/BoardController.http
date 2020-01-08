@@ -1,0 +1,11 @@
+POST http://127.0.0.1:8080/board
+Content-Type: application/json
+
+{
+  "id": "NOTICE",
+  "name": "공지사항",
+  "description": "공지사항 설명",
+  "memberId": 1
+}
+
+###

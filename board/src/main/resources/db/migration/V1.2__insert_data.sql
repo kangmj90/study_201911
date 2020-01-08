@@ -23,23 +23,23 @@ insert into board(id, name, description, creator_id, creator_name, create_date, 
   values ('MARKETPLACE', '사고/팝니다', '사용자들이 자유롭게 사고 파는 ', 1, '관리자', current_timestamp(), 1, '관리자', current_timestamp());
 
 -- 카테고리 등록
--- insert into category(id, board_id, name) VALUES (1, 'SNS', '칭찬');
--- insert into category(id, board_id, name) VALUES (2, 'SNS', '자랑');
--- insert into category(id, board_id, name) VALUES (3, 'SNS', '일상');
--- insert into category(id, board_id, name) VALUES (4, 'NOTICE', '공지사항');
--- insert into category(id, board_id, name) VALUES (5, 'MARKETPLACE', '삽니다');
--- insert into category(id, board_id, name) VALUES (6, 'MARKETPLACE', '팝니다');
---
--- -- 게시글 등록
--- insert into article(id, DTYPE, board_id, category_id, status, subject, body, writer_id, writer_name, write_date, modifier_id, modifier_name, modify_date)
---     values(5, 'NORMAL', 'SNS', 1, 'POST', '제목', '내용', 1, '관리자', current_timestamp(), 1, '관리자', current_timestamp());
---
--- -- 게시글 댓글 등록
--- insert into article_comments(article_id, comment, writer_id, writer_name, write_date)
---   values (5, '내용', 1, '관리자', current_timestamp());
---
--- -- 게시글 북마크 등록
--- insert into article_bookmark(article_id, member_id, created) VALUES (5, 1, current_timestamp());
---
--- -- 게시글 좋아요 등록
--- insert into article_likes(article_id, member_id, created) VALUES (5, 1, current_timestamp());
+insert into category(id, board_id, name) VALUES (1, 'SNS', '칭찬');
+insert into category(id, board_id, name) VALUES (2, 'SNS', '자랑');
+insert into category(id, board_id, name) VALUES (3, 'SNS', '일상');
+insert into category(id, board_id, name) VALUES (4, 'NOTICE', '공지사항');
+insert into category(id, board_id, name) VALUES (5, 'MARKETPLACE', '삽니다');
+insert into category(id, board_id, name) VALUES (6, 'MARKETPLACE', '팝니다');
+
+-- 게시글 등록
+insert into article(id, DTYPE, board_id, category_id, status, subject, body, writer_id, writer_name, write_date, modifier_id, modifier_name, modify_date)
+    values(5, 'NORMAL', 'SNS', 1, 'POST', '제목', '내용', 1, '관리자', current_timestamp(), 1, '관리자', current_timestamp());
+
+-- 게시글 댓글 등록
+insert into article_comments(article_id, comment, writer_id, writer_name, write_date)
+  values (5, '내용', 1, '관리자', current_timestamp());
+
+-- 게시글 북마크 등록
+insert into article_bookmark(article_id, member_id, created) VALUES (5, 1, current_timestamp());
+
+-- 게시글 좋아요 등록
+insert into article_likes(article_id, member_id, created) VALUES (5, 1, current_timestamp());
