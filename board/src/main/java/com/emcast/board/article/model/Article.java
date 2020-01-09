@@ -58,11 +58,7 @@ public abstract class Article {
     public abstract void comment(final Member member, final String comment);
 
     public static Article create(final Board board) {
-        final ArticleType type = board.getArticleType();
-        if (type == null) {
-            throw new RuntimeException("Unsupported Article Type!");
-        }
-
-        return type.newInstance();
+//        TODO: 구현
+        return null;
     }
 }

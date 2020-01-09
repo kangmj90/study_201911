@@ -20,12 +20,6 @@ public class AlertedArticle extends Article {
 
     @Override
     public void comment(final Member member, final String comment) {
-        if (!getWritten().getMember().getId().equals(member.getId())) {
-            this.alerts.add(new CommentAlert(member, this, "ADD_COMMENT"));
-        }
-
-        final List<Comments> comments = getComments();
-
-        comments.add(new Comments(comment, null));
+//        TODO: 구현
     }
 }

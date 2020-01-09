@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+// TODO: 구현
 @Repository
 public class ArticleRepositoryImpl extends QuerydslRepositorySupport implements ArticleCustomRepository {
     private static final QArticle ARTICLE = QArticle.article;
@@ -26,37 +27,16 @@ public class ArticleRepositoryImpl extends QuerydslRepositorySupport implements 
 
     @Override
     public List<Article> findInBoard(final String boardId) {
-        return from(ARTICLE)
-            .leftJoin(ARTICLE.board, BOARD)
-            .where(BOARD.id.eq(boardId))
-            .fetch();
+        return null;
     }
 
     @Override
     public PersonalCounting counting(final Long id) {
-        return from(MEMBER)
-            .where(MEMBER.id.eq(id))
-            .select(Projections.constructor(
-                PersonalCounting.class,
-                JPAExpressions.select(LIKES.count()).from(LIKES).where(LIKES.member.eq(MEMBER)),
-                JPAExpressions.select(BOOKMARK.count()).from(BOOKMARK).where(BOOKMARK.member.eq(MEMBER))
-            ))
-            .fetchFirst();
+        return null;
     }
 
     @Override
     public List<Article> fetch(final ArticleFetchReq fetch) {
-        final JPQLQuery<Article> query = from(ARTICLE);
-
-        if (ArticleFetchReq.FetchType.SUBJECT.equals(fetch.getType())) {
-            query.where(ARTICLE.subject.containsIgnoreCase(fetch.getText()));
-        } else if (ArticleFetchReq.FetchType.SUBJECT_BODY.equals(fetch.getType())) {
-            query.where(
-                ARTICLE.subject.containsIgnoreCase(fetch.getText())
-                    .or(ARTICLE.body.containsIgnoreCase(fetch.getText()))
-            );
-        }
-
-        return query.fetch();
+        return null;
     }
 }

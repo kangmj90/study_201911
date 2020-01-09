@@ -50,22 +50,7 @@ public class ArticleServiceImpl implements ArticleService {
     public Article write(final String boardId, final ArticleWriteReq req) {
         // TODO: 구현
 //        2. 게시글 등록
-        Board board = boardRepository.findById(boardId)
-                .orElseThrow(() -> new RuntimeException("Not Found Board"));
-
-        Article article = Article.create(board);
-        article.setSubject(req.getSubject());
-        article.setBody(req.getBody());
-
-        Member member = memberRepository.getOne(req.getWriterId());
-        EmbeddedMember embeddedMember = new EmbeddedMember(
-                member.getId(), member.getName()
-        );
-
-        article.setWritten(new Created(
-                embeddedMember, LocalDate.now().toDate()
-        ));
-        return repository.save(article);
+        return null;
     }
 
     @Override
@@ -73,33 +58,6 @@ public class ArticleServiceImpl implements ArticleService {
         // TODO: 구현
 //        3. 게시글 코멘트를 등록
 //                - 코멘트 등록시에 게시글과 코멘트 작성자가 다를 경우 게시글 작성자에게 알람 기능.
-        Article article = repository.findByBoardIdAndId(boardId, articleId)
-                .orElseThrow(() -> new RuntimeException("Not Found Article"));
-
-        Member member = memberRepository.getOne(req.getWriterId());
-        EmbeddedMember embeddedMember = new EmbeddedMember(
-          member.getId(), member.getName()
-        );
-
-        Created written = new Created(
-          embeddedMember, LocalDate.now().toDate()
-        );
-
-        Comments comments = new Comments(
-                req.getText(), written
-        );
-
-        List<Comments> commentsList = new ArrayList<>();
-        commentsList.add(comments);
-        article.setComments(commentsList);
-
-        repository.save(article);
-
-        if (article.getId().equals(req.getWriterId())) {
-            ArticleType.NORMAL.newInstance();
-        } else {
-            ArticleType.ALERT.newInstance();
-        }
     }
 
     @Override

@@ -18,8 +18,6 @@ import java.util.List;
 public class NormalArticle extends Article {
     @Override
     public void comment(final Member member, final String comment) {
-        final List<Comments> comments = getComments();
-
-        comments.add(new Comments(comment, null));
+//        TODO: 구현
     }
 }

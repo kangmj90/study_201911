@@ -26,24 +26,6 @@ public class BoardServiceImpl implements BoardService {
     public Board register(BoardRegisterReq req) {
         // TODO: 구현
 //        1. 게시판 등록
-        Board board = new Board();
-        board.setId(req.getId());
-        board.setName(req.getName());
-        board.setDescription(req.getDescription());
-        board.setArticleType(req.getArticleType());
-
-        Member member = memberRepository.getOne(req.getMemberId());
-        EmbeddedMember embeddedMember = new EmbeddedMember(
-                member.getId(), member.getName()
-        );
-
-        board.setCreated(new Created(
-                embeddedMember, LocalDate.now().toDate()
-        ));
-        board.setChanged(new Changed(
-                embeddedMember, LocalDate.now().toDate()
-        ));
-
-        return repository.save(board);
+        return null;
     }
 }
